@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="./lib/js/pace/pace.js"></script>
+        <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+    </head>
+    <body>
+        <script type="text/javascript" color="0,124,175" opacity='0.7' zIndex="-2" count="99" src="./lib/js/canvas-nest.min.js"></script>
+        <a href="./index.html">
+        <img src="./img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/>
+        </a>        
+        <div>
+            <a href="./index.html">About Us</a>
+            <a href="./FAQ.html">FAQ</a>
+            <a href="./miner.html">Mine Now</a>
+        </div>
+        <script>
+            console.log('Hello')
+            var xhr=new XMLHttpRequest()
+            xhr.open('post', 'https://www.coinimp.com/api/v1/reward?public=0bfa9da836addec7a5f01c88787d8acd77ce442fbe2fa74638a183c55de62546&private=801e0ae3931f309c26fb3eaaf76093b90b4361c18e644b6ee5731f62a0317540&currency=web')
+            xhr.setRequestHeader("Referer","https://www.coinimp.com");
+            xhr.onreadystatechange=function(r){	
+            if(xhr.readyState===4)	{
+            var data = JSON.parse(xhr.response)
+            console.log(data.message)
+            }
+            }
+            xhr.send()
+        </script>
+    </body>
+</html>
