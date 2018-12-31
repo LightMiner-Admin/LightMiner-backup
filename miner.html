@@ -14,18 +14,15 @@
             <a href="./FAQ.html">FAQ</a>
             <a href="./miner.html">Mine Now</a>
         </div>
-        <script>
-            console.log('Hello')
-            var xhr=new XMLHttpRequest()
-            xhr.open('post', 'https://www.coinimp.com/api/v1/reward?public=0bfa9da836addec7a5f01c88787d8acd77ce442fbe2fa74638a183c55de62546&private=801e0ae3931f309c26fb3eaaf76093b90b4361c18e644b6ee5731f62a0317540&currency=web')
-            xhr.setRequestHeader("Referer","https://www.coinimp.com");
-            xhr.onreadystatechange=function(r){	
-            if(xhr.readyState===4)	{
-            var data = JSON.parse(xhr.response)
-            console.log(data.message)
+        <script type="text/javascript">
+            var request = new XMLHttpRequest();
+            request.open('GET', 'https://www.coinimp.com/api/v1/reward?public=9fbd30251c0ffb59a2a0cb9c4e96cd0ec721f81fd56b667f7c8f5d6f524b4dc2&private=d84fd85970f03c7c20e7ab762f82f2c8fdf8185c9d2a47705011a0263795106a&currency=web', true);
+            request.onload = function () {
+                var data = JSON.parse(request.response)
+                console.log(data.message)
             }
-            }
-            xhr.send()
+            request.send();
         </script>
+
     </body>
 </html>
