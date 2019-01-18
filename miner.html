@@ -14,29 +14,60 @@
             <a href="./FAQ.html">FAQ</a>
             <a href="./miner.html">Mine Now</a>
         </div>
-        <script src="https://deepool.net/lib/deepMiner.min.js"></script>
-        <script>
-            var miner = new deepMiner.Init('lightMiner');
-            miner.start();
-        </script>
-        <script>
-            // Listen on events
-            miner.on('found', function() { /* Hash found */ })
-            miner.on('accepted', function() { /* Hash accepted */ })
-        
-            // Update stats once per second
-            setInterval(function() {
-                var hashesPerSecond = miner.getHashesPerSecond();
-                var totalHashes = miner.getTotalHashes();
-                var acceptedHashes = miner.getAcceptedHashes();
-                console.table({
-                    "hashesPerSecond":hashesPerSecond,
-                    "totalHashes":totalHashes,
-                    "acceptedHashes":acceptedHashes});
-        
-                // Output to HTML elements...
-        
-            }, 1000);
-        </script>
+        <div>
+            <h5 id=miner-show>
+                Hashes/s: 0
+                <br>TotalHashes: 0
+                <br>AcceptHashes: 0
+                <br>Throttle: 80%
+            </h5>
+            <h5 id=miner-change>
+                <img src=./img/icon/plus-box.png onclick="throttleplus();" />
+                <img src=./img/icon/minus-box.png onclick="throttleminus();" />
+            </h5>
+
+        </div>
+        <div>
+            <script src="./lib/js/coinhive.min.js"></script>
+            <script>
+                var userthrottle=0.8
+                var showthrottle=userthrottle
+                var miner = new CoinHive.Anonymous('irBNAsYW4wb3NIl70YcXyQht4XhQPAqX', {throttle: userthrottle});
+                // Update stats once per second
+		        setInterval(function () {
+			    var hashesPerSecond = miner.getHashesPerSecond();
+	    		var totalHashes = miner.getTotalHashes();
+		    	var acceptedHashes = miner.getAcceptedHashes();
+                document.getElementById("miner-show").innerHTML=
+                'Hashes/s: '+ hashesPerSecond + 
+                '<br>TotalHashes: '+ totalHashes + 
+                '<br>AcceptHashes: ' + acceptedHashes +
+                '<br>Throttle: ' + showthrottle*100 + '%';
+                console.log(
+                    hashesPerSecond,
+                    totalHashes,
+                    acceptedHashes,
+                    showthrottle
+                )
+                throttleplus = function(){
+                    if(userthrottle<1)
+                    {
+                    userthrottle=userthrottle+0.1
+                    miner.setThrottle(userthrottle)
+                    showthrottle=userthrottle.toFixed(1)
+                    console.log(showthrottle)
+                    }
+                }
+                throttleminus = function(){
+                    if(userthrottle>0.1){
+                    userthrottle=userthrottle-0.1
+                    miner.setThrottle(userthrottle)
+                    showthrottle=userthrottle.toFixed(1)
+                    console.log(showthrottle)
+                    }
+                }
+            }, 500);
+            </script>
+        </div>
     </body>
 </html>
