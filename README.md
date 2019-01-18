@@ -1,4 +1,4 @@
-![logo](https://alpha2004.github.io/LightMiner/img/logo/logo-1.png)
+![logo](https://alpha2004.github.io/LightMiner/lib/img/logo/logo-1.png)
 Our OFFICIAL WEBSITE is https://lightminer.xyz  
 This is a prodject that use online mining script to mine ___Cryptographic currency___.  
 This project use Coinimp's JS because the developer don't have enough time to write a new JS to de this.  
