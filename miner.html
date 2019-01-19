@@ -3,33 +3,49 @@
     <head>
         <script src="./lib/js/pace/pace.js"></script>
         <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+        <link href="./lib/css/miner.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <script type="text/javascript" color="0,124,175" opacity='0.7' zIndex="-2" count="99" src="./lib/js/canvas-nest.min.js"></script>
+        <div id='bubble'>
+            <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>        
+        </div>
         <a href="./index.html">
         <img src="./lib/img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/>
-        </a>        
+        </a>
         <div>
             <a href="./index.html">About Us</a>
             <a href="./FAQ.html">FAQ</a>
             <a href="./miner.html">Mine Now</a>
         </div>
-        <div>
-            <h5 id=miner-show>
+        <div id=miner_panel_html>
+            <h5 id=miner_show_text>
                 Hashes/s: 0
                 <br>TotalHashes: 0
                 <br>AcceptHashes: 0
                 <br>Throttle: 20%
             </h5>
-            <h5 id=miner-throttle-userchange>
-                <img src=./lib/img/icon/00B0FF/plus-box.png onclick="throttleminus();" />
-                <img src=./lib/img/icon/00B0FF/minus-box.png onclick="throttleplus();" />
-            </h5>
-            <h5 id=miner-action>
-                <img src=./lib/img/icon/00B0FF/power.png onclick="usermineraction()"/>
+            <br>
+            <h5 id=miner_useraction>
+                Change Throttle:
+                <img src=./lib/img/icon/00B0FF/plus-box.png onclick="throttleminus();" class="miner_useraction_img"/>
+                <img src=./lib/img/icon/00B0FF/minus-box.png onclick="throttleplus();" class="miner_useraction_img"/><br>
+                Start Mining:<br>
+                <img src=./lib/img/icon/00B0FF/power.png onclick="usermineraction()" class="miner_start_img"/>
             </h5>
         </div>
-        <div>
+        <div id=miner_panel_js>
             <script src='./lib/js/decimal.js'></script>
             <script src="./lib/js/coinhive.min.js"></script>
             <script>
@@ -41,7 +57,7 @@
 			    var hashesPerSecond = miner.getHashesPerSecond();
 	    		var totalHashes = miner.getTotalHashes();
 		    	var acceptedHashes = miner.getAcceptedHashes();
-                document.getElementById("miner-show").innerHTML=
+                document.getElementById("miner_show_text").innerHTML=
                 'Hashes/s: '+ hashesPerSecond + 
                 '<br>TotalHashes: '+ totalHashes + 
                 '<br>AcceptHashes: ' + acceptedHashes +
