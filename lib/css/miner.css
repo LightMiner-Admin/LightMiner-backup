@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0
+}
 #miner_panel_html{
     position: absolute;
     left: 35%;
@@ -6,16 +10,33 @@
 #miner_show_text{
     color: #5DADE2;
     position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     float: left;
     margin-top: 10%;
-    font-size: 150%
+    font-size: 45px
 }
 #miner_useraction{
     color: #85C1E9;
     position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
     float: left;
     margin-top: 20%;
     font-size: 150%
+}
+#header_container{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #f5f5f5
+}
+#header_container img{
+    margin: 7px;
+    margin-left: 15px;
+    vertical-align: middle
 }
 .miner_useraction_img{
     position: relative;
@@ -25,4 +46,10 @@
     position: absolute;
     margin: 0 auto;
     width: 50%;
+}
+.header_text{
+    position: relative;
+    float: right;
+    margin: 1%;
+    font-size: 100%
 }

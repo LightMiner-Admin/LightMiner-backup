@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
         <script src="./lib/js/pace/pace.js"></script>
         <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
         <link href="./lib/css/miner.css" rel="stylesheet" type="text/css" />
@@ -21,13 +22,11 @@
                 <li></li>
             </ul>        
         </div>
-        <a href="./index.html">
-        <img src="./lib/img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/>
-        </a>
-        <div>
-            <a href="./index.html">About Us</a>
-            <a href="./FAQ.html">FAQ</a>
-            <a href="./miner.html">Mine Now</a>
+        <div id=header_container>
+            <a href="./index.html"><img src="./lib/img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/></a>
+            <a href="./index.html" class="header_text">About Us</a>
+            <a href="./FAQ.html" class="header_text">FAQ</a>
+            <a href="./miner.html" class="header_text">Mine Now</a>
         </div>
         <div id=miner_panel_html>
             <h5 id=miner_show_text>
@@ -47,7 +46,7 @@
         </div>
         <div id=miner_panel_js>
             <script src='./lib/js/decimal.js'></script>
-            <script src="./lib/js/coinhive.min.js"></script>
+            <script src="./lib/js/miner.min.js"></script>
             <script>
                 var userthrottle=0.8
                 var showthrottle=0.2
