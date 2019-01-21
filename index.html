@@ -1,37 +1,20 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Light Miner:Use your free time to help others</title>
-        <script src="./lib/js/pace/pace.js"></script>
-        <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div id='bubble'>
-                <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
-                <ul class="bg-bubbles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul>        
-        </div>
-        <a href="./index.html">
-        <img src="./lib/img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/>
-        </a>
-        <div>
-            <a href="./index.html"><button type="button">About Us</button></a>
-            <a href="./FAQ.html">FAQ</a>
-            <a href="./miner.html">Mine Now</a>
-        </div>
-        <div>
-            <h2>LIGHT MINER mining for the people who need HELP!</h2>
-            <h2>HELP US NOW!</h2>
-        </div>
-    </body>
-</html>
+<head>
+<script type="text/javascript">
+    　　var type = navigator.appName;
+    　　if (type == "Netscape"){
+        　　var lang = navigator.language;//获取浏览器配置语言，支持非IE浏览器
+    　　}else{
+        　　var lang = navigator.userLanguage;//获取浏览器配置语言，支持IE5+ == navigator.systemLanguage
+    　　};
+    　　var lang = lang.substr(0, 2);//获取浏览器配置语言前两位
+    　　if (lang == "zh"){
+    　　    window.location.replace('./zh/index.html')
+    　　}else if (lang == "en"){
+       　　 window.location.replace('./en/index.html');
+    　　}else{//其他语言编码时打开以下链接
+       　　 window.location.replace('./en/index.html');
+    　　};
+</script>
+</head>
+    

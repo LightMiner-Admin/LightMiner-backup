@@ -5,6 +5,23 @@
         <script src="./lib/js/pace/pace.js"></script>
         <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
         <link href="./lib/css/miner.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="./lib/css/cookieconsent.min.css" />
+        <script src="./lib/js/cookieconsent.min.js"></script>
+        <script>
+            window.addEventListener("load", function(){
+            window.cookieconsent.initialise({
+              "palette": {
+              "popup": {
+            "background": "#000"
+            },
+            "button": {
+            "background": "#f1d600"
+            }
+            },
+            "theme": "edgeless",
+            "position": "bottom-right"
+            })});
+        </script>
     </head>
     <body>
         <div id='bubble'>
