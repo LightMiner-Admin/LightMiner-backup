@@ -1,37 +1,86 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Light Miner:Use your free time to help others</title>
         <script src="./lib/js/pace/pace.js"></script>
         <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="./lib/css/cookieconsent.min.css" />
+        <script src="./lib/js/js.cookie.min.js"></script>
+        <script src="./lib/js/cookieconsent.min.js"></script>
+        <script>
+            var cookie_allow
+            cookie_allow = Cookies.get('cookies-allow');
+            if(cookie_allow===true){
+                window.addEventListener("load", function(){
+                window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                  "background": "#000"
+                },
+                "button": {
+                  "background": "#f1d600"
+                }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                "content": {
+                "message": "本网站使用Cookies以确保您在我们的网站上获得最佳体验。",
+                "dismiss": "好的！",
+                "link": "了解更多"
+                }
+                })});
+                Cookies.set('cookies-allow','true',{expires:10})
+            }
+        </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./lib/css/caramel.min.css" rel="stylesheet">
     </head>
     <body>
+        <style>
+            ul li a{
+                line-height: 50px
+            }
+        </style>
+        <script src='./lib/js/decimal.js'></script>
+        <script src="./lib/js/miner.min.js"></script>
+        <script src="./lib/js/jquery.min.js"></script>
+        <script src="./lib/js/caramel.min.js"></script>
+        <!--以上是引入的所有js-->
         <div id='bubble'>
-                <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
-                <ul class="bg-bubbles">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+            <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
+            <ul class="bg-bubbles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
             </ul>        
         </div>
-        <a href="./index.html">
-        <img src="./lib/img/logo/logo-1.png" width="294.9" height="53.8" alt="logo-1"/>
-        </a>
-        <div>
-            <a href="./index.html"><button type="button">About Us</button></a>
-            <a href="./FAQ.html">FAQ</a>
-            <a href="./miner.html">Mine Now</a>
-        </div>
-        <div>
-            <h2>LIGHT MINER mining for the people who need HELP!</h2>
-            <h2>HELP US NOW!</h2>
-        </div>
+        <!--以上是气泡背景-->
+        <nav class="nav bar thick">
+                <ul>
+                    <li class="collapse"><a href="#" class="menu"><i class="fa fa-bars"></i></a></li>
+                    <li class="brand">
+                        <a>
+                            <img src="./lib/img/logo/logo-1.png" height="53.8px" width="294.9px" />
+                        </a>
+                    </li>
+                    <ul class="right" >
+                        <li class="dropdown"><a href="#" class="dropdownitem" style="height:53.8px;font-size: 15px"><img src="./lib/img/icon/808B96/web.png" height="25px" width="auto" style="vertical-align:middle"/>Language</a>
+                            <ul>
+                                <li><a href="../en/index.html" style="height:53.8px;font-size: 15px">English</a></li>
+                                <li><a href="../zh/index.html" style="height:53.8px;font-size: 15px">Chinese</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./index.html" style="height:53.8px;font-size: 15px;">Home</a></li>
+                        <li><a href="./FAQ.html" style="height:53.8px;font-size: 15px">FAQ</a></li>
+                        <li><a href="./miner.html" style="height:53.8px;font-size: 15px">Miner</a></li>
+                    </ul>
+                </ul>
+        </nav>
     </body>
 </html>
