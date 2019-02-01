@@ -1,4 +1,4 @@
-![logo](https://alpha2004.github.io/LightMiner/lib/img/logo/logo-1.png)
+![logo](https://alpha2004.github.io/LightMiner/en/lib/img/logo/logo-1.png)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca05b361-b9ec-4a1f-bfb7-1a5a05c786d3/deploy-status)](https://app.netlify.com/sites/lightminer/deploys)
 Our OFFICIAL WEBSITE is https://lightminer.xyz  
 This is a prodject that use online mining script to mine ___Cryptographic currency___.  
