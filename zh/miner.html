@@ -100,8 +100,16 @@
         </div>
         <div>
             <script>
-                var userthrottle=0.8
-                var showthrottle=0.2
+                if(Cookies.get('userthrottle')===undefined){
+                    Cookies.set('userthrottle','0.2')
+                    var showthrottle=0.2
+                    var userthrottle=0.8
+                    console.log(userthrottle)
+                }
+                else{
+                    var showthrottle=Cookies.get('userthrottle')
+                    var showthrottle=new Decimal(1).sub(new Decimal(showthrottle)).toNumber()
+                }
                 var miner = new CoinHive.Anonymous('irBNAsYW4wb3NIl70YcXyQht4XhQPAqX', {throttle: userthrottle});
                 // Update stats once per second and print to the screen
 		        setInterval(function () {
@@ -113,13 +121,6 @@
                 '<br>TotalHashes: '+ totalHashes + 
                 '<br>AcceptHashes: ' + acceptedHashes +
                 '<br>Throttle: ' + showthrottle*100 + '%';
-                console.log(
-                    hashesPerSecond,
-                    totalHashes,
-                    acceptedHashes,
-                    userthrottle,
-                    showthrottle
-                )
                 //User change setting function
                 throttleminus = function(){
                     if(userthrottle>0.1)
@@ -128,6 +129,7 @@
                     miner.setThrottle(userthrottle)
                     showthrottle=userthrottle.toFixed(1)
                     showthrottle=new Decimal(1).sub(new Decimal(showthrottle)).toNumber()
+                    Cookies.set('userthrottle',userthrottle)
                     console.log(showthrottle)
                     }
                 }
@@ -137,6 +139,7 @@
                     miner.setThrottle(userthrottle)
                     showthrottle=userthrottle.toFixed(1)
                     showthrottle=new Decimal(1).sub(new Decimal(showthrottle)).toNumber()
+                    Cookies.set('userthrottle',userthrottle)
                     console.log(showthrottle)
                     }
                 }
