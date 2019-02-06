@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
     <head>
-        <script src="./lib/js/pace/pace.js"></script>
-        <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="./lib/css/cookieconsent.min.css" />
-        <script src="./lib/js/js.cookie.min.js"></script>
-        <script src="./lib/js/cookieconsent.min.js"></script>
+        <title>Light Miner: Donating while relaxing</title>
+        <script src="../lib/js/pace/pace.js"></script>
+        <link href="../lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
+        <script src="../lib/js/js.cookie.min.js"></script>
+        <script src="../lib/js/cookieconsent.min.js"></script>
         <script>
             var cookie_allow
             cookie_allow = Cookies.get('cookies-allow');
@@ -32,21 +33,31 @@
             }
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./lib/css/caramel.min.css" rel="stylesheet">
-    </head>
-    <body>
+        <link href="../lib/css/caramel.min.css" rel="stylesheet">
         <style>
-            ul li a{
-                line-height: 50px
+            a{
+                color: #58D68D
+            }
+            a:visited{
+                color: #58D68D
+            }
+            a:hover{
+                color: #58D68D
+            }
+            a:active{
+                color: #58D68D
             }
         </style>
-        <script src='./lib/js/decimal.js'></script>
-        <script src="./lib/js/miner.min.js"></script>
-        <script src="./lib/js/jquery.min.js"></script>
-        <script src="./lib/js/caramel.min.js"></script>
+    </head>
+    <body>
+        <script src='../lib/js/decimal.js'></script>
+        <script src="../lib/js/miner.min.js"></script>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/caramel.min.js"></script>
+        <script type="text/javascript" src="../lib/js/currency-zh.js"></script>
         <!--以上是引入的所有js-->
         <div id='bubble'>
-            <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
+            <link href="../lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
             <ul class="bg-bubbles">
                 <li></li>
                 <li></li>
@@ -65,22 +76,57 @@
                 <ul>
                     <li class="collapse"><a href="#" class="menu"><i class="fa fa-bars"></i></a></li>
                     <li class="brand">
-                        <a>
-                            <img src="./lib/img/logo/logo-1.png" height="53.8px" width="294.9px" />
+                        <a href="./index.html">
+                            <img alt="" src="../lib/img/logo/logo-1.png" height="35px" width="auto"/>
                         </a>
                     </li>
                     <ul class="right" >
-                        <li class="dropdown"><a href="#" class="dropdownitem" style="height:53.8px;font-size: 15px"><img src="./lib/img/icon/808B96/web.png" height="25px" width="auto" style="vertical-align:middle"/>Language</a>
+                        <li class="dropdown"><a href="#" class="dropdownitem" ><img alt="" src="../lib/img/icon/808B96/web.png" height="20px" width="auto" style="vertical-align:middle"/>语言</a>
                             <ul>
-                                <li><a href="../en/index.html" style="height:53.8px;font-size: 15px">English</a></li>
-                                <li><a href="../zh/index.html" style="height:53.8px;font-size: 15px">Chinese</a></li>
+                                <li><a href="../en/miner.html" style="color: #525252">English</a></li>
+                                <li><a href="../zh/miner.html" style="color: #525252">Chinese</a></li>
                             </ul>
                         </li>
-                        <li><a href="./index.html" style="height:53.8px;font-size: 15px;">Home</a></li>
-                        <li><a href="./FAQ.html" style="height:53.8px;font-size: 15px">FAQ</a></li>
-                        <li><a href="./miner.html" style="height:53.8px;font-size: 15px">Miner</a></li>
+                        <li><a href="./index.html" style="color: #525252">主页</a></li>
+                        <li><a href="./FAQ.html" style="color: #525252">FAQ</a></li>
+                        <li><a href="./miner.html" style="color: #525252">⛏现在挖掘</a></li>
                     </ul>
                 </ul>
         </nav>
-    </body>
+        <div align="center" style="margin-top: 2%;margin-bottom: 1%"><img src="../lib/img/logo/logo-1.png" height="auto" width="80%" /></div>
+        <div align="center"><a href="./miner.html"><button class="btn success" style="width: 20%;height: auto;clear: both;font-size: 2vw;margin-bottom: 1%">现在开始捐赠！⛏</button></a></div>
+        <div class="row">
+            <div class="box col-4" align="center" style="color: #F7DC6F;word-wrap: break-word;">
+                <img src="../lib/img/icon/F39C12/pickaxe.png" style="height: 72px;width: auto;position: relative;clear: both"/>
+                <p>
+                        <h4>
+                            如何伸出援手？
+                        </h4>
+                        1.您可以直接点击<a href="./miner.html">这里</a>来挖掘加密货币(这是最直接也是最推荐的方式)<br>
+                        2.您也可以帮助我们来检举滥用，点击<a href="mailto:abuse@lightminer.xyz">这里</a>来给我们写邮件<br>
+                        3.如果您有足够的专业知识，请<a href="mailto:support@lightminer.xyz">联系我们</a>，成为开发团队的一员。
+                </p>            
+            </div>
+            <div class="box col-4" align="center" style="color: #F7DC6F;word-wrap: break-word;">
+                <img src="../lib/img/icon/F39C12/forum.png" style="height: 72px;width: auto;position: relative;clear: both"/>
+                <p>
+                        <h4>
+                            联系我们？
+                        </h4>
+                        发邮件给我们：<br>
+                        1.有问题？<a href="mailto:support@lightminer.xyz">support@lightminer.xyz</a><br>
+                        2.发现滥用？<a href="mailto:abuse@lightminer.xyz">abuse@lightminer.xyz</a>
+                    </p>
+                </div>
+            <div class="box col-4" align="center" style="color: #F7DC6F;word-wrap: break-word;">
+                <img src="../lib/img/icon/F39C12/help.png" style="height: 72px;width: auto;position: relative;clear: both"/>
+                <h4>
+                    查看源代码？
+                </h4>
+                我们的网站托管与GitHub上，您可以在Github上查看源代码<br>
+                <a href="https://github.com/ALPHA2004/LightMiner">https://github.com/ALPHA2004/LightMiner</a>
+            </div>
+        </div>
+        <div class="coinmarketcap-currency-widget" data-currencyid="328" data-base="USD" data-secondary="USD" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="true" style="color: #F7DC6F;width: 50%;margin-right: auto;margin-left: auto"></div>
+</body>
 </html>

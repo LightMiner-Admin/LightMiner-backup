@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
     <head>
-        <script src="./lib/js/pace/pace.js"></script>
-        <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="./lib/css/cookieconsent.min.css" />
-        <script src="./lib/js/js.cookie.min.js"></script>
-        <script src="./lib/js/cookieconsent.min.js"></script>
+        <title>Light Miner: Donating while relaxing</title>
+        <script src="../lib/js/pace/pace.js"></script>
+        <link href="../lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
+        <script src="../lib/js/js.cookie.min.js"></script>
+        <script src="../lib/js/cookieconsent.min.js"></script>
         <script>
             var cookie_allow
             cookie_allow = Cookies.get('cookies-allow');
@@ -32,16 +33,31 @@
             }
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./lib/css/caramel.min.css" rel="stylesheet">
+        <link href="../lib/css/caramel.min.css" rel="stylesheet">
+        <style>
+            a{
+                color: #58D68D
+            }
+            a:visited{
+                color: #58D68D
+            }
+            a:hover{
+                color: #58D68D
+            }
+            a:active{
+                color: #58D68D
+            }
+        </style>
     </head>
     <body>
-        <script src='./lib/js/decimal.js'></script>
-        <script src="./lib/js/miner.min.js"></script>
-        <script src="./lib/js/jquery.min.js"></script>
-        <script src="./lib/js/caramel.min.js"></script>
+        <script src='../lib/js/decimal.js'></script>
+        <script src="../lib/js/miner.min.js"></script>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/caramel.min.js"></script>
+        <script type="text/javascript" src="../lib/js/currency-zh.js"></script>
         <!--以上是引入的所有js-->
         <div id='bubble'>
-            <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
+            <link href="../lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
             <ul class="bg-bubbles">
                 <li></li>
                 <li></li>
@@ -60,55 +76,75 @@
                 <ul>
                     <li class="collapse"><a href="#" class="menu"><i class="fa fa-bars"></i></a></li>
                     <li class="brand">
-                        <a>
-                            <img src="./lib/img/logo/logo-1.png" height="35px" width="auto" />
+                        <a href="./index.html">
+                            <img alt="" src="../lib/img/logo/logo-1.png" height="35px" width="auto"/>
                         </a>
                     </li>
                     <ul class="right" >
-                        <li class="dropdown"><a href="#" class="dropdownitem" ><img src="./lib/img/icon/808B96/web.png" height="20px" width="auto" style="vertical-align:middle"/>Language</a>
+                        <li class="dropdown"><a href="#" class="dropdownitem" ><img alt="" src="../lib/img/icon/808B96/web.png" height="20px" width="auto" style="vertical-align:middle"/>语言</a>
                             <ul>
-                                <li><a href="../en/miner.html" >English</a></li>
-                                <li><a href="../zh/miner.html" >Chinese</a></li>
+                                <li><a href="../en/miner.html" style="color: #525252">English</a></li>
+                                <li><a href="../zh/miner.html" style="color: #525252">Chinese</a></li>
                             </ul>
                         </li>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./FAQ.html">FAQ</a></li>
-                        <li><a href="./miner.html">Miner</a></li>
+                        <li><a href="./index.html" style="color: #525252">主页</a></li>
+                        <li><a href="./FAQ.html" style="color: #525252">FAQ</a></li>
+                        <li><a href="./miner.html" style="color: #525252">⛏现在挖掘</a></li>
                     </ul>
                 </ul>
         </nav>
-        <div>
-            <h5 id=miner_show_text>
-                Hashes/s: 0
-                <br>TotalHashes: 0
-                <br>AcceptHashes: 0
-                <br>Throttle: 20%
-            </h5>
-            <br>
-            <h5>
-                Change Throttle:
-                <img src="./lib/img/icon/00B0FF/plus-box.png" onclick="throttleminus();" class="miner_useraction_img"/>
-                <img src="./lib/img/icon/00B0FF/minus-box.png" onclick="throttleplus();" class="miner_useraction_img"/><br>
-                Start Mining:<br>
-                <img src="./lib/img/icon/00B0FF/power.png" onclick="usermineraction()" class="miner_start_img"/>
-            </h5>
+        <div class="panel info" style="width: 50%;margin-left:25%;margin-top: 7%;clear:both">
+            <div class="panel-head">实时信息</div>
+            <div class="panel-body" style="background-color: rgba(0,0,0,0);text-align: center">
+                <h5 id=miner_show_text style="color: #F7DC6F">
+                    哈希值/秒: 0.000<br>
+                    总哈希值: 0<br>
+                    已验证哈希值: 0<br>
+                    线程数: 5<br>
+                    CPU占用率: 20%
+                </h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel success" style="width: 50%;margin-left:25%;clear:both">
+            <div class="panel-head">控制面板</div>
+            <div class="panel-body" style="background-color: rgba(0,0,0,0);text-align: center">
+                <h5 style="color: #F7DC6F">
+                    改变速度:<br>
+                    <img src="../lib/img/icon/00B0FF/plus-box.png" alt="减少速度" onclick="throttleminus();"/>
+                    <img src="../lib/img/icon/00B0FF/minus-box.png" alt="增加速度" onclick="throttleplus();"/><br>
+                    改变线程数:<br>
+                    <img src="../lib/img/icon/00B0FF/plus-box.png" alt="减少线程" onclick="numthreadsplus();"/>
+                    <img src="../lib/img/icon/00B0FF/minus-box.png" alt="增加线程" onclick="numthreadsminus();"/><br>
+                    开始/停止:<br>
+                    <img src="../lib/img/icon/00B0FF/power.png" alt="开始/停止" onclick="usermineraction()" style="position:relative;display: inline-block; vertical-align: middle;"/>
+                </h5>
+            </div>
         </div>
         <div>
             <script>
+                var miner = new CoinHive.Anonymous('irBNAsYW4wb3NIl70YcXyQht4XhQPAqX', {throttle: userthrottle});
+                if(miner.ismobile){
+                    var numthreads=2
+                }
+                else{
+                    var numthreads=5
+                }
                 var showthrottle=0.2
                 var userthrottle=0.8
-                var miner = new CoinHive.Anonymous('irBNAsYW4wb3NIl70YcXyQht4XhQPAqX', {throttle: userthrottle});
                 // Update stats once per second and print to the screen
 		        setInterval(function () {
 			    var hashesPerSecond = miner.getHashesPerSecond();
-	    		var totalHashes = miner.getTotalHashes();
+	    		var totalHashes = miner.getTotalHashes(true);
 		    	var acceptedHashes = miner.getAcceptedHashes();
                 document.getElementById("miner_show_text").innerHTML=
-                'Hashes/s: '+ hashesPerSecond + 
-                '<br>TotalHashes: '+ totalHashes + 
-                '<br>AcceptHashes: ' + acceptedHashes +
-                '<br>Throttle: ' + showthrottle*100 + '%';
+                '哈希值/秒: '+ hashesPerSecond.toFixed(3) + 
+                '<br>总哈希值: '+ totalHashes + 
+                '<br>已验证哈希值: ' + acceptedHashes +
+                '<br>线程数: ' + numthreads +
+                '<br>CPU占用率: ' + showthrottle*100 + '%';
                 console.log(
+                    numthreads,
                     hashesPerSecond,
                     totalHashes,
                     acceptedHashes,
@@ -133,6 +169,22 @@
                     showthrottle=userthrottle.toFixed(1)
                     showthrottle=new Decimal(1).sub(new Decimal(showthrottle)).toNumber()
                     console.log(showthrottle)
+                    }
+                }
+                numthreadsplus = function(){
+                    numthreads++
+                    miner.setNumThreads(numthreads)
+                    console.log(
+                        numthreads
+                    )
+                }
+                numthreadsminus = function(){
+                    if(numthreads>1){
+                        numthreads--
+                        miner.setNumThreads(numthreads)
+                        console.log(
+                            numthreads
+                        )
                     }
                 }
                 usermineraction = function(){

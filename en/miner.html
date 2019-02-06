@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
     <head>
-        <script src="./lib/js/pace/pace.js"></script>
-        <link href="./lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="./lib/css/cookieconsent.min.css" />
-        <script src="./lib/js/js.cookie.min.js"></script>
-        <script src="./lib/js/cookieconsent.min.js"></script>
+        <title>Light Miner: Donating while relaxing</title>
+        <script src="../lib/js/pace/pace.js"></script>
+        <link href="../lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
+        <script src="../lib/js/js.cookie.min.js"></script>
+        <script src="../lib/js/cookieconsent.min.js"></script>
         <script>
-            window.addEventListener("load", function(){
-            window.cookieconsent.initialise({
-              "palette": {
-              "popup": {
-            "background": "#000"
-            },
-            "button": {
-            "background": "#f1d600"
+            var cookie_allow
+            cookie_allow = Cookies.get('cookies-allow');
+            if(cookie_allow===true){
+                window.addEventListener("load", function(){
+                window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                  "background": "#000"
+                },
+                "button": {
+                  "background": "#f1d600"
+                }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                })});
+                Cookies.set('cookies-allow','true',{expires:10})
             }
-            },
-            "theme": "edgeless",
-            "position": "bottom-right"
-            })});
-            Cookies.set('cookies-allow','true',{expires:10})
         </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./lib/css/caramel.min.css" rel="stylesheet">
-    </head>
-    <body>
+        <link href="../lib/css/caramel.min.css" rel="stylesheet">
         <style>
-            ul li a{
-                line-height: 50px
+            a{
+                color: #58D68D
+            }
+            a:visited{
+                color: #58D68D
+            }
+            a:hover{
+                color: #58D68D
+            }
+            a:active{
+                color: #58D68D
             }
         </style>
-        <script src='./lib/js/decimal.js'></script>
-        <script src="./lib/js/miner.min.js"></script>
-        <script src="./lib/js/jquery.min.js"></script>
-        <script src="./lib/js/caramel.min.js"></script>
+    </head>
+    <body>
+        <script src='../lib/js/decimal.js'></script>
+        <script src="../lib/js/miner.min.js"></script>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/caramel.min.js"></script>
         <!--以上是引入的所有js-->
         <div id='bubble'>
-            <link href="./lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
+            <link href="../lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
             <ul class="bg-bubbles">
                 <li></li>
                 <li></li>
@@ -56,55 +70,75 @@
                 <ul>
                     <li class="collapse"><a href="#" class="menu"><i class="fa fa-bars"></i></a></li>
                     <li class="brand">
-                        <a>
-                            <img src="./lib/img/logo/logo-1.png" height="53.8px" width="294.9px" />
+                        <a href="./index.html">
+                            <img alt="" src="../lib/img/logo/logo-1.png" height="35px" width="auto"/>
                         </a>
                     </li>
                     <ul class="right" >
-                        <li class="dropdown"><a href="#" class="dropdownitem" style="height:53.8px;font-size: 15px"><img src="./lib/img/icon/808B96/web.png" height="25px" width="auto" style="vertical-align:middle"/>Language</a>
+                        <li class="dropdown"><a href="#" class="dropdownitem" ><img alt="" src="../lib/img/icon/808B96/web.png" height="20px" width="auto" style="vertical-align:middle"/>Language</a>
                             <ul>
-                                <li><a href="../en/miner.html" style="height:53.8px;font-size: 15px">English</a></li>
-                                <li><a href="../zh/miner.html" style="height:53.8px;font-size: 15px">Chinese</a></li>
+                                <li><a href="../en/miner.html" style="color: #525252">English</a></li>
+                                <li><a href="../zh/miner.html" style="color: #525252">Chinese</a></li>
                             </ul>
                         </li>
-                        <li><a href="./index.html" style="height:53.8px;font-size: 15px;">Home</a></li>
-                        <li><a href="./FAQ.html" style="height:53.8px;font-size: 15px">FAQ</a></li>
-                        <li><a href="./miner.html" style="height:53.8px;font-size: 15px">Miner</a></li>
+                        <li><a href="./index.html" style="color: #525252">Home</a></li>
+                        <li><a href="./FAQ.html" style="color: #525252">FAQ</a></li>
+                        <li><a href="./miner.html" style="color: #525252">⛏Mine NOW</a></li>
                     </ul>
                 </ul>
         </nav>
-        <div>
-            <h5 id=miner_show_text>
-                Hashes/s: 0
-                <br>TotalHashes: 0
-                <br>AcceptHashes: 0
-                <br>Throttle: 20%
-            </h5>
-            <br>
-            <h5>
-                Change Throttle:
-                <img src="./lib/img/icon/00B0FF/plus-box.png" onclick="throttleminus();" class="miner_useraction_img"/>
-                <img src="./lib/img/icon/00B0FF/minus-box.png" onclick="throttleplus();" class="miner_useraction_img"/><br>
-                Start Mining:<br>
-                <img src="./lib/img/icon/00B0FF/power.png" onclick="usermineraction()" class="miner_start_img"/>
-            </h5>
+        <div class="panel info" style="width: 50%;margin-left:25%;margin-top: 7%;clear:both">
+            <div class="panel-head">Realtime Information</div>
+            <div class="panel-body" style="background-color: rgba(0,0,0,0);text-align: center">
+                <h5 id=miner_show_text style="color: #F7DC6F">
+                    Hashes/s: 0.000<br>
+                    TotalHashes: 0<br>
+                    AcceptedHashes: 0<br>
+                    Threads: 5<br>
+                    Throttle: 20%
+                </h5>
+            </div>
+        </div>
+        <br>
+        <div class="panel success" style="width: 50%;margin-left:25%;clear:both">
+            <div class="panel-head">Control Panel</div>
+            <div class="panel-body" style="background-color: rgba(0,0,0,0);text-align: center">
+                <h5 style="color: #F7DC6F">
+                    Change Throttle:<br>
+                    <img src="../lib/img/icon/00B0FF/plus-box.png" alt="减少速度" onclick="throttleminus();"/>
+                    <img src="../lib/img/icon/00B0FF/minus-box.png" alt="增加速度" onclick="throttleplus();"/><br>
+                    Change Threads:<br>
+                    <img src="../lib/img/icon/00B0FF/plus-box.png" alt="减少线程" onclick="numthreadsplus();"/>
+                    <img src="../lib/img/icon/00B0FF/minus-box.png" alt="增加线程" onclick="numthreadsminus();"/><br>
+                    START/STOP:<br>
+                    <img src="../lib/img/icon/00B0FF/power.png" alt="开始/停止" onclick="usermineraction()" style="position:relative;display: inline-block; vertical-align: middle;"/>
+                </h5>
+            </div>
         </div>
         <div>
             <script>
-                var userthrottle=0.8
-                var showthrottle=0.2
                 var miner = new CoinHive.Anonymous('irBNAsYW4wb3NIl70YcXyQht4XhQPAqX', {throttle: userthrottle});
+                if(miner.ismobile){
+                    var numthreads=2
+                }
+                else{
+                    var numthreads=5
+                }
+                var showthrottle=0.2
+                var userthrottle=0.8
                 // Update stats once per second and print to the screen
 		        setInterval(function () {
 			    var hashesPerSecond = miner.getHashesPerSecond();
-	    		var totalHashes = miner.getTotalHashes();
+	    		var totalHashes = miner.getTotalHashes(true);
 		    	var acceptedHashes = miner.getAcceptedHashes();
                 document.getElementById("miner_show_text").innerHTML=
-                'Hashes/s: '+ hashesPerSecond + 
+                'Hashes/s: '+ hashesPerSecond.toFixed(3) + 
                 '<br>TotalHashes: '+ totalHashes + 
-                '<br>AcceptHashes: ' + acceptedHashes +
+                '<br>AcceptedHashes: ' + acceptedHashes +
+                '<br>Threads: ' + numthreads +
                 '<br>Throttle: ' + showthrottle*100 + '%';
                 console.log(
+                    numthreads,
                     hashesPerSecond,
                     totalHashes,
                     acceptedHashes,
@@ -129,6 +163,22 @@
                     showthrottle=userthrottle.toFixed(1)
                     showthrottle=new Decimal(1).sub(new Decimal(showthrottle)).toNumber()
                     console.log(showthrottle)
+                    }
+                }
+                numthreadsplus = function(){
+                    numthreads++
+                    miner.setNumThreads(numthreads)
+                    console.log(
+                        numthreads
+                    )
+                }
+                numthreadsminus = function(){
+                    if(numthreads>1){
+                        numthreads--
+                        miner.setNumThreads(numthreads)
+                        console.log(
+                            numthreads
+                        )
                     }
                 }
                 usermineraction = function(){
