@@ -1,0 +1,12 @@
+{
+    "name": "WPA For Light Miner",
+    "short_name": "WPAFLM",
+    "lang": "zh-CN",
+    "start_url": "/",
+    "display": "browser",
+    "icons": [
+      {
+        "src": "https://html.lightminer.xyz/favicon.ico"
+      }
+    ]
+}
