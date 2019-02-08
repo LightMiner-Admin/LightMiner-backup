@@ -4,29 +4,6 @@
         <title>Light Miner: Donating while relaxing</title>
         <script src="../lib/js/pace/pace.js"></script>
         <link href="../lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
-        <script src="../lib/js/js.cookie.min.js"></script>
-        <script src="../lib/js/cookieconsent.min.js"></script>
-        <script>
-            var cookie_allow
-            cookie_allow = Cookies.get('cookies-allow');
-            if(cookie_allow===true){
-                window.addEventListener("load", function(){
-                window.cookieconsent.initialise({
-                "palette": {
-                "popup": {
-                  "background": "#000"
-                },
-                "button": {
-                  "background": "#f1d600"
-                }
-                },
-                "theme": "edgeless",
-                "position": "bottom-right",
-                })});
-                Cookies.set('cookies-allow','true',{expires:10})
-            }
-        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../lib/css/caramel.min.css" rel="stylesheet">
         <style>
@@ -192,5 +169,28 @@
             }, 500);
             </script>
         </div>
+        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
+        <script src="../lib/js/js.cookie.min.js"></script>
+        <script src="../lib/js/cookieconsent.min.js"></script>
+        <script>
+            var cookie_allow
+            cookie_allow = Cookies.get('cookies-allow');
+            if(cookie_allow===true){
+                window.addEventListener("load", function(){
+                window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                  "background": "#000"
+                },
+                "button": {
+                  "background": "#f1d600"
+                }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                })});
+                Cookies.set('cookies-allow','true',{expires:10})
+            }
+        </script>
     </body>
 </html>

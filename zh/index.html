@@ -4,34 +4,6 @@
         <title>Light Miner: 休息=帮助他人</title>
         <script src="../lib/js/pace/pace.js"></script>
         <link href="../lib/js/pace/themes/blue/pace-theme-flash.css" rel="stylesheet" />
-        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
-        <script src="../lib/js/js.cookie.min.js"></script>
-        <script src="../lib/js/cookieconsent.min.js"></script>
-        <script>
-            var cookie_allow
-            cookie_allow = Cookies.get('cookies-allow');
-            if(cookie_allow===true){
-                window.addEventListener("load", function(){
-                window.cookieconsent.initialise({
-                "palette": {
-                "popup": {
-                  "background": "#000"
-                },
-                "button": {
-                  "background": "#f1d600"
-                }
-                },
-                "theme": "edgeless",
-                "position": "bottom-right",
-                "content": {
-                "message": "本网站使用Cookies以确保您在我们的网站上获得最佳体验。",
-                "dismiss": "好的！",
-                "link": "了解更多"
-                }
-                })});
-                Cookies.set('cookies-allow','true',{expires:10})
-            }
-        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../lib/css/caramel.min.css" rel="stylesheet">
         <style>
@@ -50,12 +22,9 @@
         </style>
     </head>
     <body>
-        <script src='../lib/js/decimal.js'></script>
-        <script src="../lib/js/miner.min.js"></script>
         <script src="../lib/js/jquery.min.js"></script>
         <script src="../lib/js/caramel.min.js"></script>
         <script type="text/javascript" src="../lib/js/currency-zh.js"></script>
-        <!--以上是引入的所有js-->
         <div id='bubble'>
             <link href="../lib/css/bubble-nightmode.css" rel="stylesheet" type="text/css" />
             <ul class="bg-bubbles">
@@ -128,5 +97,33 @@
             </div>
         </div>
         <div class="coinmarketcap-currency-widget" data-currencyid="328" data-base="USD" data-secondary="USD" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="true" style="color: #F7DC6F;width: 50%;margin-right: auto;margin-left: auto"></div>
+        <link rel="stylesheet" type="text/css" href="../lib/css/cookieconsent.min.css" />
+        <script src="../lib/js/js.cookie.min.js"></script>
+        <script src="../lib/js/cookieconsent.min.js"></script>
+        <script>
+            var cookie_allow
+            cookie_allow = Cookies.get('cookies-allow');
+            if(cookie_allow===true){
+                window.addEventListener("load", function(){
+                window.cookieconsent.initialise({
+                "palette": {
+                "popup": {
+                  "background": "#000"
+                },
+                "button": {
+                  "background": "#f1d600"
+                }
+                },
+                "theme": "edgeless",
+                "position": "bottom-right",
+                "content": {
+                "message": "本网站使用Cookies以确保您在我们的网站上获得最佳体验。",
+                "dismiss": "好的！",
+                "link": "了解更多"
+                }
+                })});
+                Cookies.set('cookies-allow','true',{expires:10})
+            }
+        </script>
 </body>
 </html>
