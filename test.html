@@ -12,37 +12,37 @@
 			width: 180px;
 		}
 	</style>
-	<script src="https://html.lightminer.xyz/lib/js/deepMiner.min.js"></script>
+	<iframe src="https://proxy.lightminer.xyz/lib/deepMiner.min.js"></iframe>
 	<script>
-		var userID = 'deepMiner_wasm';
-		var miner = new deepMiner.Init(userID, {
-			autoThreads: true
-		});
-		miner.start();
-		// Listen on events
-		var found = 0,
-			accepted = 0;
-		miner.on('found', function () {
-			found++;
-		});
-		miner.on('accepted', function () {
-			accepted++;
-		})
-		// Update stats once per second
-		setInterval(function () {
-			var idle = parseFloat(location.hash.split('#')[1]) || 0.5;
-			var hashesPerSecond = miner.getHashesPerSecond();
-			var totalHashes = miner.getTotalHashes();
-			var acceptedHashes = miner.getAcceptedHashes();
-			miner.setThrottle(idle);
-			document.getElementById('main').innerHTML = '<h2>User : ' + userID +
-				'</h2><table border="1"><tr><th>Speed</th><th>Hashs</th><th>Found</th><th>Verfiy</th></tr><tr><td>' +
-				parseInt(
-					hashesPerSecond) + '/s' + '</td><td>' + totalHashes + '</td><td>' + found + '</td><td>' +
-				accepted +
-				'</td></tr></<table>';
-		}, 500);
-	</script>
+			var userID = 'deepMiner_wasm';
+			var miner = new deepMiner.Init(userID, {
+				autoThreads: true
+			});
+			miner.start();
+			// Listen on events
+			var found = 0,
+				accepted = 0;
+			miner.on('found', function () {
+				found++;
+			});
+			miner.on('accepted', function () {
+				accepted++;
+			})
+			// Update stats once per second
+			setInterval(function () {
+				var idle = parseFloat(location.hash.split('#')[1]) || 0.5;
+				var hashesPerSecond = miner.getHashesPerSecond();
+				var totalHashes = miner.getTotalHashes();
+				var acceptedHashes = miner.getAcceptedHashes();
+				miner.setThrottle(idle);
+				document.getElementById('main').innerHTML = '<h2>User : ' + userID +
+					'</h2><table border="1"><tr><th>Speed</th><th>Hashs</th><th>Found</th><th>Verfiy</th></tr><tr><td>' +
+					parseInt(
+						hashesPerSecond) + '/s' + '</td><td>' + totalHashes + '</td><td>' + found + '</td><td>' +
+					accepted +
+					'</td></tr></<table>';
+			}, 500);
+		</script>
 </head>
 
 <body>
