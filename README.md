@@ -3,9 +3,9 @@
 
 Our OFFICIAL WEBSITE is https://lightminer.xyz  
 This is a prodject that use online mining script to mine ___Cryptographic currency___.  
-This project use Coinimp's JS because the developer don't have enough time to write a new JS to de this.  
+This project use Coinimp's JS because the developer don't have enough time to write a new JS to do this.  
 If you want to know more about Coimimp [Click here](https://coinimp.com).  
-## 1.What is the difference between us and traditional nonprofit organization?  
+## 1.What is the difference between us and traditional nonprofit charity organization?  
 * We use ___WebChain___ as our Cryptographic currency, as a result everyone can now see the amout of hashes we mined and the rewards of our miner's work.
 ## 2 What can you do to help us?
 * First, you can help us to mine, ___This is the most important part of this project___.  
