@@ -1,5 +1,5 @@
 ![logo](https://lightminer.xyz/lib/img/logo/logo-1.png)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ca05b361-b9ec-4a1f-bfb7-1a5a05c786d3/deploy-status)](https://app.netlify.com/sites/lightminer/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/78ba77ea-e6a3-4f3e-a181-1b9bb0982249/deploy-status)](https://app.netlify.com/sites/lightminer/deploys)
 
 Our OFFICIAL WEBSITE is https://lightminer.xyz  
 This is a prodject that use online mining script to mine ___Cryptographic currency___.  
